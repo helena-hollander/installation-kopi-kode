@@ -49,7 +49,7 @@ import CreditComp from '@/components/CreditComp.vue';
   <TicketsComp class="h-[55vh] w-screen"></TicketsComp>
 </section> -->
 <div>
-  <FrontCanvasComp2></FrontCanvasComp2>
+<FrontCanvasComp2></FrontCanvasComp2>
 <FrontCanvasComp3></FrontCanvasComp3>
 <FrontCanvasComp></FrontCanvasComp>
 </div>
@@ -69,7 +69,7 @@ pointer-events: none;
 }
 #defaultCanvas1 {
  opacity: 0.4; /*Opacity 25%*/
- filter: /*invert(100%)*/ brightness(2) blur(30px);
+ filter: brightness(2) blur(30px);
  pointer-events: none; /*Så jeg kan klikke på ting bagved*/
  position: fixed;
 }
