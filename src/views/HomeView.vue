@@ -1,6 +1,8 @@
 <script setup>
 import CanvasComp from '@/components/CanvasComp.vue'; //Bagerste canvas comp
 import FrontCanvasComp from '@/components/FrontCanvasComp.vue'; //Forreste canvas comp
+import FrontCanvasComp2 from '@/components/FrontCanvasComp2.vue'; //Forreste canvas comp
+import FrontCanvasComp3 from '@/components/FrontCanvasComp3.vue'; //Forreste canvas comp
 import HeroComp from '@/components/HeroComp.vue'; //Grafikken på Hero page
 import AboutComp from '@/components/AboutComp.vue';
 import DancersComp from '@/components/DancersComp.vue';
@@ -13,9 +15,12 @@ import CreditComp from '@/components/CreditComp.vue';
 <template>
 
 <body >
+  <div class="absolute h-screen w-screen">
+    <rect class="h-screen w-screen fill-black"></rect>
+  </div>
   <CanvasComp></CanvasComp>
 
-<section id="hero">
+<!-- <section id="hero">
   <HeroComp class="absolute z-10 h-screen"></HeroComp>
 </section>
 
@@ -25,14 +30,14 @@ import CreditComp from '@/components/CreditComp.vue';
 
 <section id="dancerssection" class="absolute translate-y-[200vh]">
   <DancersComp class=" h-screen w-screen"></DancersComp>
+</section> -->
+
+<section id="musicsection" class="absolute translate-y-[70vh] z-20">
+  <!-- <p class="font-brød text-pink-300 text-3xl translate-x-[30vw] translate-y-[30px]">musical teaser</p> -->
+  <MusicComp class="translate-x-[10vw] w-screen"></MusicComp>
 </section>
 
-<section id="musicsection" class="absolute translate-y-[450vh]">
-  <p class="font-brød text-pink-300 text-3xl translate-x-[614px] translate-y-[30px]">musical teaser</p>
-  <MusicComp class="translate-x-[700px] w-screen"></MusicComp>
-</section>
-
-<section id="creditsection" class="absolute translate-y-[520vh]">
+<!-- <section id="creditsection" class="absolute translate-y-[520vh]">
   <CreditComp></CreditComp>
 </section>
 
@@ -42,8 +47,10 @@ import CreditComp from '@/components/CreditComp.vue';
 
 <section id="ticketssection" class="absolute translate-y-[670vh]">
   <TicketsComp class="h-[55vh] w-screen"></TicketsComp>
-</section>
+</section> -->
 <div>
+  <FrontCanvasComp2></FrontCanvasComp2>
+<FrontCanvasComp3></FrontCanvasComp3>
 <FrontCanvasComp></FrontCanvasComp>
 </div>
 </body>
@@ -52,20 +59,34 @@ import CreditComp from '@/components/CreditComp.vue';
 <style>
 #defaultCanvas0 {
 
-filter: blur(30px) hue-rotate(60deg) contrast(1.9);
--webkit-filter: blur(30px) contrast(1.9) saturate(0.25) brightness(1.25); /*alle filters skal være i samme kode, så de ikke annullerer hinanden. I denne web udgave, virker de*/
+filter: blur(30px) contrast(1.9);
+-webkit-filter: blur(30px) contrast(1.9) saturate(0.65) brightness(1.25); /*alle filters skal være i samme kode, så de ikke annullerer hinanden. I denne web udgave, virker de*/
 pointer-events: none;
  /*mix-blend-mode: hue; *//*Typo forsvinder, hvis ikke blend er hue... ved ikke hvorfor*/
  position: fixed; /*så den ikke flytter sig.*/
  z-index: -10;
+ opacity: 1;
 }
 #defaultCanvas1 {
- opacity: 0.1; /*Opacity 25%*/
- filter: /*invert(100%)*/ brightness(2);
+ opacity: 0.4; /*Opacity 25%*/
+ filter: /*invert(100%)*/ brightness(2) blur(30px);
  pointer-events: none; /*Så jeg kan klikke på ting bagved*/
  position: fixed;
 }
-
+#defaultCanvas2 {
+ opacity: 0.15; /*Opacity 25%*/
+ filter: /*invert(100%)*/ brightness(5) blur(10px) saturate(1.2);
+ pointer-events: none; /*Så jeg kan klikke på ting bagved*/
+ position: fixed;
+ z-index: -5;
+}
+#defaultCanvas3 {
+  opacity: 0.08; /*Opacity 25%*/
+  filter: brightness(2) saturate(2);
+  pointer-events: none; /*Så jeg kan klikke på ting bagved*/
+  position: fixed;
+  
+ }
 /*defaultCanvas0 og 1 er i style, fordi p5 laver sit eget id, og kan derfor ikke styles med tailwind*/
 
 </style>

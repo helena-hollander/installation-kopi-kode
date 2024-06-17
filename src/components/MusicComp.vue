@@ -1,5 +1,5 @@
 <template>
-  <div class="music-player font-brøditalic text-pink-300 text-7xl p-4">
+  <div class="music-player font-brøditalic text-pink-300 text-3xl p-4">
     <audio ref="audio" :src="audioSrc" @timeupdate="updateTime"></audio>
     <div class="controls flex items-center space-x-4 w-full">
       <button @click="togglePlay" class="text-pink-300 font-bold blur-xs hover:blur-none">
@@ -87,7 +87,7 @@ input[type='range'].play-bar {
   height: 10px; /* Increased height for better visibility */
   background: #ddd;
   outline: none;
-  opacity: 0.7;
+  opacity: 0;
   transition: opacity .15s ease-in-out;
 }
 
